@@ -1,0 +1,18 @@
+body {
+    background-color:#fcf4d9;
+}
+
+.main-section{
+    background-color:#5f5dbd;
+    color: white;
+    padding: 30px;
+    max-width:600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+
+.intro{
+    font-family: 'Protest Riot', sans-serif;
+    text-align:center;
+}
