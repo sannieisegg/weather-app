@@ -13,13 +13,13 @@ body {
 }
 
 .intro{
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'DM Serif Display', serif;
     text-align:center;
 }
 
 .city-input{
     background-color:#fcf4d9;
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'DM Serif Display', serif;
     border-radius:6px;
     width:75%;
     font-size:16px;
@@ -32,7 +32,7 @@ body {
     padding: 15px 20px;
     font-size: 16px;
     border-radius:6px;
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'DM Serif Display', serif;
 }
 
 .credits{
@@ -43,7 +43,7 @@ body {
 }
 
 a {
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'DM Serif Display', serif;
     color: white;
 }
 
