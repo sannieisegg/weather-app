@@ -52,7 +52,46 @@ a:hover{
 }
 
 .weather-data{
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     display:flex;
+    padding: 18px 0;
+    justify-content: space-between;  
     
+}
+
+.weather-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+
+}
+
+.city-name{
+    font-size: 38px;
+    line-height: 48px;
+}
+
+strong{
+    color:#f9b6c9;
+}
+
+.temperature{
+    margin-top: 30px;
+    margin-right: 28px;
+}
+
+.current-temp{
+    font-size:85px;
+}
+
+.emoji{
+    font-size: 62px;
+}
+ 
+.degree-celcius{
+    position:relative;
+    top:-50px;
+    font-size:20px;
+
 }
