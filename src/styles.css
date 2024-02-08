@@ -50,3 +50,9 @@ a {
 a:hover{
     color:#fcf4d9;
 }
+
+.weather-data{
+    font-family: 'Protest Riot', sans-serif;
+    display:flex;
+    
+}
