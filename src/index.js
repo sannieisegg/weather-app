@@ -3,9 +3,6 @@
 function input(event){
     event.preventDefault();
     let cityInput = document.querySelector(".city-input");
-    
-    let h1= document.querySelector(".city-name");
-    h1.innerHTML = cityInput.value;
     searchCity(cityInput.value);
 }
 
@@ -28,5 +25,8 @@ function temperatureUpdate(response){
     //accessing city's current temp
     let tempCurrent = response.data.temperature.current;
     let displayTemp = document.querySelector(".current-temp");
+    let h1= document.querySelector(".city-name");
+
+    h1.innerHTML = response.data.city;
     displayTemp.innerHTML = Math.round(tempCurrent);
 }
