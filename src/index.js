@@ -6,13 +6,27 @@ function input(event){
     
     let h1= document.querySelector(".city-name");
     h1.innerHTML = cityInput.value;
+    searchCity(cityInput.value);
 }
 
 let userInput = document.querySelector("form");
 userInput.addEventListener("submit",input);
 
 
+//aim: ensuring search input directs me to the city's current temperature
+//first step: learning to access any city's current temp (maybe through console.log)
 
- let apiKey="49o09e00a5c35t44f5b2b77b02df6331";
+//2 functions: one to call the city, another to link the city with temp
 
+function searchCity(city) {
+    let apiKey="49o09e00a5c35t44f5b2b77b02df6331";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    axios.get(apiUrl).then(temperatureUpdate);
+}
 
+function temperatureUpdate(response){
+    //accessing city's current temp
+    let tempCurrent = response.data.temperature.current;
+    let displayTemp = document.querySelector(".current-temp");
+    displayTemp.innerHTML = tempCurrent;
+}
