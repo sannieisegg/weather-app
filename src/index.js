@@ -28,12 +28,14 @@ function temperatureUpdate(response){
     let h1= document.querySelector(".city-name");
     let description = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
-
+    let wind = document.querySelector("#windSpeed");
 
     h1.innerHTML = response.data.city;
     displayTemp.innerHTML = Math.round(tempCurrent);
     description.innerHTML = response.data.condition.description;
     humidity.innerHTML = response.data.temperature.humidity;
+    wind.innerHTML = response.data.wind.speed;
+
 
 
     
