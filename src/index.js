@@ -29,14 +29,16 @@ function temperatureUpdate(response){
     let description = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#windSpeed");
+    let time = document.querySelector("#dateTime");
+    let dateTime = new Date(response.data.time * 1000);
+    
+    console.log(response.data);
 
     h1.innerHTML = response.data.city;
     displayTemp.innerHTML = Math.round(tempCurrent);
     description.innerHTML = response.data.condition.description;
     humidity.innerHTML = response.data.temperature.humidity;
     wind.innerHTML = response.data.wind.speed;
-
-
-
-    
+    time.innerHTML = `${dateTime.getDay()} ${dateTime.getHours()}:${dateTime.getMinutes()}`;
+   
 }
