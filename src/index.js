@@ -39,6 +39,15 @@ function temperatureUpdate(response){
     description.innerHTML = response.data.condition.description;
     humidity.innerHTML = response.data.temperature.humidity;
     wind.innerHTML = response.data.wind.speed;
-    time.innerHTML = `${dateTime.getDay()} ${dateTime.getHours()}:${dateTime.getMinutes()}`;
-   
+    time.innerHTML = formatDate(dateTime);
+}
+
+
+function formatDate(dateTime){
+    let hour = dateTime.getHours();
+    let minutes = dateTime.getMinutes();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[dateTime.getDay()];
+
+    return `${day} ${hour}:${minutes}`;
 }
