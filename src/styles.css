@@ -90,7 +90,9 @@ strong{
 }
 
 .emoji{
-    font-size: 62px;
+    width: 80px;
+    position:relative;
+    top:10px;    
 }
  
 .degree-celcius{
