@@ -3,18 +3,21 @@ body {
 }
 
 .main-section{
-    background-color:#5f5dbd;
-    color: white;
-    padding: 30px;
+    background-color:#d6f0fc;
+    color: black;
+    padding: 20px;
     max-width:600px;
-    margin: 30px auto;
+    margin: 85px auto;
     border-radius: 10px;
     box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
 }
 
 .intro{
-    font-family: 'DM Serif Display', serif;
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
     text-align:center;
+    padding-top:30px;
+    font-size: 80px;
 }
 
 .city-input{
@@ -27,12 +30,19 @@ body {
 }
 
 .submit-button{
-    color:#5f5dbd;
+    color:black;
     background-color: white;
     padding: 15px 20px;
     font-size: 16px;
     border-radius:6px;
     font-family: 'DM Serif Display', serif;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    background-color: #1585CE;
+    color:white;
+    transition:all 200ms linear;
 }
 
 .credits{
@@ -44,11 +54,11 @@ body {
 
 a {
     font-family: 'DM Serif Display', serif;
-    color: white;
+    color: black;
 }
 
 a:hover{
-    color:#fcf4d9;
+    color:#f2687c;
 }
 
 .weather-data{
@@ -73,11 +83,11 @@ a:hover{
 }
 
 strong{
-    color:#f9b6c9;
+    color:#f2687c;
 }
 
 #humidity, #windSpeed{
-    color: #f9b6c9;
+    color: #f2687c; 
 }
 
 .temperature{
