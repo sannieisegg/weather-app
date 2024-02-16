@@ -31,6 +31,7 @@ function temperatureUpdate(response){
     let wind = document.querySelector("#windSpeed");
     let time = document.querySelector("#dateTime");
     let dateTime = new Date(response.data.time * 1000);
+    let imageIcon = document.querySelector("#icon");
     
     console.log(response.data);
 
@@ -40,6 +41,7 @@ function temperatureUpdate(response){
     humidity.innerHTML = response.data.temperature.humidity;
     wind.innerHTML = response.data.wind.speed;
     time.innerHTML = formatDate(dateTime);
+    imageIcon.innerHTML = `<img src= "${response.data.condition.icon_url}" class="emoji" />`;
 }
 
 
@@ -50,11 +52,11 @@ function formatDate(dateTime){
     let day = days[dateTime.getDay()];
 
     if (minutes <10) {
-        minutes = `0{minutes}`;
+        minutes = `0${minutes}`;
     }
 
     if (hour <10) {
-        hour = `0{hour}`;
+        hour = `0${hour}`;
     }
 
     return `${day} ${hour}:${minutes}`;
