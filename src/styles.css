@@ -64,7 +64,7 @@ a:hover{
 .weather-data{
     font-family: "Protest Revolution", sans-serif;
     display:flex;
-    padding: 18px 0;
+    padding: 18px 10px;
     justify-content: space-between;  
     
 }
@@ -111,3 +111,24 @@ strong{
     font-size:20px;
 
 }
+
+.forecasts{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-family: "Protest Revolution", sans-serif;
+    padding:5px;
+}
+
+#day{
+    text-align:center;
+}
+
+.forecast-temps{
+    text-align: center;
+}
+
+#max{
+    margin-right:13px;
+}
+

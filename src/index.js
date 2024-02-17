@@ -19,6 +19,9 @@ function searchCity(city) {
     let apiKey="49o09e00a5c35t44f5b2b77b02df6331";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then(temperatureUpdate);
+
+    let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    axios.get(forecastUrl).then(weatherForecast);
 }
 
 function temperatureUpdate(response){
@@ -60,6 +63,16 @@ function formatDate(dateTime){
     }
 
     return `${day} ${hour}:${minutes}`;
+}
 
-    
+function weatherForecast(response){
+    //change icon url 
+    console.log(response.data.daily[4].condition.icon_url);
+
+
+    //change forecast days 
+
+
+    //change min and max temp
+
 }
