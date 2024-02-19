@@ -67,35 +67,39 @@ function formatDate(dateTime){
 
 function weatherForecast(response){
     //change icon url 
-    //console.log(response.data.daily[4].condition.icon_url);
-
     let forecastIcons = document.querySelectorAll(".forecast-icon");
-    let forecastDays = document.querySelectorAll(".forecast-day");
-    
-    //console.log("Forecast Icons:", forecastIcons);
-    //console.log(response.data.daily);
 
     let days = [response.data.daily[0].condition.icon_url, response.data.daily[1].condition.icon_url, response.data.daily[2].condition.icon_url, response.data.daily[3].condition.icon_url,
     response.data.daily[4].condition.icon_url];
 
-    //console.log("Icon URLs:", days);
-
     forecastIcons.forEach(function(iconElement, index){
         iconElement.innerHTML = `<img src= "${days[index]}" />`;
-    })
-
-    
-
-
-
-
-    
-
-
+    });
 
     //change forecast days 
+    let forecastDays = document.querySelectorAll("#day");
+
+    //accessing all the forecast days, should get output of 0/1/2 etc 
+    response.data.daily.forEach(function(value,index){
+        console.log(index);
+    })
+
+    //attempt replacing daily[0/1/2 etc] with days
+
+    //let upcomingDays = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+    //let upcomingDaysId = [response.data.daily[0],response.data.daily[1],response.data.daily[2],response.data.daily[3],response.data.daily[4],response.data.daily[5],response.data.daily[6]];
+    //upcomingDays = upcomingDaysId;
+
+};
 
 
-    //change min and max temp
-}
+   // let day = days[dateTime.getDay()];
+
+
+
+
+
+
+    //step 3: change min and max temp
+
 
