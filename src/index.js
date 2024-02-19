@@ -36,7 +36,7 @@ function temperatureUpdate(response){
     let dateTime = new Date(response.data.time * 1000);
     let imageIcon = document.querySelector("#icon");
     
-    console.log(response.data);
+    //console.log(response.data);
 
     h1.innerHTML = response.data.city;
     displayTemp.innerHTML = Math.round(tempCurrent);
@@ -67,12 +67,35 @@ function formatDate(dateTime){
 
 function weatherForecast(response){
     //change icon url 
-    console.log(response.data.daily[4].condition.icon_url);
+    //console.log(response.data.daily[4].condition.icon_url);
+
+    let forecastIcons = document.querySelectorAll(".forecast-icon");
+    let forecastDays = document.querySelectorAll(".forecast-day");
+    
+    //console.log("Forecast Icons:", forecastIcons);
+    //console.log(response.data.daily);
+
+    let days = [response.data.daily[0].condition.icon_url, response.data.daily[1].condition.icon_url, response.data.daily[2].condition.icon_url, response.data.daily[3].condition.icon_url,
+    response.data.daily[4].condition.icon_url];
+
+    //console.log("Icon URLs:", days);
+
+    forecastIcons.forEach(function(iconElement, index){
+        iconElement.innerHTML = `<img src= "${days[index]}" />`;
+    })
+
+    
+
+
+
+
+    
+
 
 
     //change forecast days 
 
 
     //change min and max temp
-
 }
+

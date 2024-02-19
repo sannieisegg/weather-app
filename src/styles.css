@@ -132,3 +132,6 @@ strong{
     margin-right:13px;
 }
 
+.forecast-icon img{
+    display:block;
+}
