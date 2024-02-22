@@ -57,7 +57,6 @@ function formatDate(dateTime){
     if (minutes <10) {
         minutes = `0${minutes}`;
     }
-
     if (hour <10) {
         hour = `0${hour}`;
     }
@@ -67,7 +66,7 @@ function formatDate(dateTime){
 
 
 function weatherForecast(response){
-    //change icon url 
+    //part 1: change icon url 
     let forecastIcons = document.querySelectorAll(".forecast-icon");
 
     let days = [response.data.daily[0].condition.icon_url, response.data.daily[1].condition.icon_url, response.data.daily[2].condition.icon_url, response.data.daily[3].condition.icon_url,
@@ -77,24 +76,48 @@ function weatherForecast(response){
         iconElement.innerHTML = `<img src= "${days[index]}" />`;
     });
 
-    //part2: changing the forecasted days
+    forecastDay(response);
+    
+};
 
-    let forecastDays = document.querySelectorAll("#day");
+function forecastDay(response){
+    //part2: changing the forecasted days
+    let forecastData = response.data.daily;
+
+    //accessing all the forecast days, should get output of 0/1/2 etc 
+    forecastData.forEach(function(value,index){
+        console.log(value.time);
+    });
+
+    let timeStamp = forecastData[0].time;
+    console.log(formatDate(timeStamp));
+
+     //try repeating above procedure but only with the day 
+
+   
     let upcomingDays = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
 
-     //accessing all the forecast days, should get output of 0/1/2 etc 
-    response.data.daily.forEach(function(value,index){
-        console.log(index);
-    })
 
-    //q: how can i access live timestamp again?
-    console.log(response.data.daily[0].time);
-    
+    //to retrieve value for upcoming days 
+    forecastData.forEach(function(value, index){
+        let dateTime = new Date(value.time * 1000);
+        let upcomingDay = upcomingDays[dateTime.getDay()];
+        console.log(upcomingDay);
+    })
 };
 
 
 
+
     
+
+    
+
+
+
+
+
+
 
 
     
