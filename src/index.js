@@ -86,7 +86,13 @@ function weatherForecast(response){
     response.data.daily.forEach(function(value,index){
         console.log(index);
     })
+
+    //q: how can i access live timestamp again?
+    console.log(response.data.daily[0].time);
+    
 };
+
+
 
     
 
