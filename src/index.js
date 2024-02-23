@@ -48,7 +48,8 @@ function temperatureUpdate(response){
 }
 
 
-function formatDate(dateTime){
+function formatDate(response){
+    let dateTime = new Date();
     let hour = dateTime.getHours();
     let minutes = dateTime.getMinutes();
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -83,28 +84,31 @@ function weatherForecast(response){
 function forecastDay(response){
     //part2: changing the forecasted days
     let forecastData = response.data.daily;
-
-    //accessing all the forecast days, should get output of 0/1/2 etc 
-    forecastData.forEach(function(value,index){
-        console.log(value.time);
-    });
-
-    let timeStamp = forecastData[0].time;
-    console.log(formatDate(timeStamp));
-
-     //try repeating above procedure but only with the day 
-
-   
     let upcomingDays = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
 
+    //test: accessing all the forecast days, should get output of 0/1/2 etc 
+    //forecastData.forEach(function(value,index){
+        //console.log(value.time);});
 
-    //to retrieve value for upcoming days 
+    //let timeStamp = forecastData[0].time;
+    ///console.log(formatDate(timeStamp));
+
+    //aim to retrieve value for upcoming days 
     forecastData.forEach(function(value, index){
         let dateTime = new Date(value.time * 1000);
+        //to get the day of the week
         let upcomingDay = upcomingDays[dateTime.getDay()];
-        console.log(upcomingDay);
-    })
+
+        let forecastDay = document.querySelectorAll(".day")[index];
+        forecastDay.innerHTML = upcomingDay;
+        
+    });
 };
+
+    //replace innerHTML to upcomingDay 
+    
+
+    
 
 
 
