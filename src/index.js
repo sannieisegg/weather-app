@@ -103,10 +103,13 @@ function forecastDay(response){
         forecastDay.innerHTML = upcomingDay;
         
     });
+
+    maxTemp(tempResponse);
 };
 
-    //replace innerHTML to upcomingDay 
-    
+function maxTemp(tempResponse) {
+    console.log(tempResponse.data.daily);
+}
 
     
 
