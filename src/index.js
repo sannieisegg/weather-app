@@ -119,7 +119,25 @@ function maxTemp(response){
 
     minTemp(response);
 };
-    
+
+function minTemp(response){
+    let minTempForecasts = document.querySelectorAll(".min");
+
+    let upcomingMinTemperatures = [response.data.daily[0].temperature.minimum, response.data.daily[1].temperature.minimum,
+    response.data.daily[2].temperature.minimum,response.data.daily[3].temperature.minimum,
+    response.data.daily[4].temperature.minimum,response.data.daily[5].temperature.minimum,
+    response.data.daily[6].temperature.minimum];
+
+    let roundedMinTemps = upcomingMinTemperatures.map(function(temp){
+        return Math.round(temp);
+    });
+
+    console.log(roundedMinTemps);
+
+    minTempForecasts.forEach(function (forecast,index){
+        forecast.innerHTML = roundedMinTemps[index];
+    });
+}
 
 
 

@@ -135,3 +135,7 @@ strong{
 .forecast-icon img{
     display:block;
 }
+
+.min{
+    padding-left:5px;
+}
