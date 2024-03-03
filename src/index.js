@@ -83,34 +83,42 @@ function weatherForecast(response){
 
 function forecastDay(response){
     //part2: changing the forecasted days
+    let forecastDays = document.querySelectorAll(".day");
     let forecastData = response.data.daily;
     let upcomingDays = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
 
-    //test: accessing all the forecast days, should get output of 0/1/2 etc 
-    //forecastData.forEach(function(value,index){
-        //console.log(value.time);});
-
-    //let timeStamp = forecastData[0].time;
-    ///console.log(formatDate(timeStamp));
-
     //aim to retrieve value for upcoming days 
-    forecastData.forEach(function(value, index){
-        let dateTime = new Date(value.time * 1000);
+    forecastDays.forEach(function(forecastDay, index){
+        let dateTime = new Date(forecastData[index].time * 1000);
         //to get the day of the week
         let upcomingDay = upcomingDays[dateTime.getDay()];
-
-        let forecastDay = document.querySelectorAll(".day")[index];
-        forecastDay.innerHTML = upcomingDay;
-        
+        forecastDay.innerHTML = upcomingDay; 
     });
 
-    maxTemp(tempResponse);
+    maxTemp(response);
 };
 
-function maxTemp(tempResponse) {
-    console.log(tempResponse.data.daily);
-}
+function maxTemp(response){
+    let maxTempForecasts = document.querySelectorAll(".max");
+    console.log(response.data.daily[0].temperature.maximum);
 
+    let upcomingMaxTemperatures = [response.data.daily[0].temperature.maximum, response.data.daily[1].temperature.maximum,
+    response.data.daily[2].temperature.maximum,response.data.daily[3].temperature.maximum,
+    response.data.daily[4].temperature.maximum,response.data.daily[5].temperature.maximum,
+    response.data.daily[6].temperature.maximum];
+
+    let roundedMaxTemps = upcomingMaxTemperatures.map(function(temp){
+        return Math.round(temp);
+    });
+
+    console.log(roundedMaxTemps);
+
+    maxTempForecasts.forEach(function (forecast,index){
+        forecast.innerHTML = roundedMaxTemps[index];
+    });
+
+    minTemp(response);
+};
     
 
 
