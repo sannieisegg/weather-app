@@ -181,7 +181,16 @@ strong{
 
     #icon{
         display:none;
-        
+    }
+
+    .forecasts, .forecast-day{
+        font-size:15px;
+        padding:2px;
+        text-align: center;
+    }
+
+    .forecast-icon img{
+        width:60px;
     }
 
     
