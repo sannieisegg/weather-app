@@ -156,5 +156,34 @@ strong{
     .main-section form{
         display:flex;
     }
+
+    .temperature{
+        position:absolute;
+        right:0;
+    }
+
+    .current-temp{
+        font-size:60px;
+    }
+
+    .degree-celcius{
+        font-size:15px;
+    }
+
+    .city-name{
+        font-size:40px;
+    }
+
+    #dateTime, #description,#humidity,
+    #windSpeed, .humidity_wind{
+        font-size: 13px;
+    }
+
+    #icon{
+        display:none;
+        
+    }
+
+    
     
 }
